@@ -1,37 +1,76 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <string.h>
+
+#include "functions.h"
+
+#define MAX_LETTERS 25
 
 int main(){
 
-	int i, j = 0, z = 0;
+	int i;
 
-	printf("ASCII CODE TABLE:\n----------------------------------\n");
+	char *user_input = malloc(MAX_LETTERS);
+	int  user_arg, user_arg2;
 
-	int c = 32;
+	for (i = 0; i < i + 1; i++){
+
+		printf("$ : ");
+		
+		scanf("%s", user_input);
+
+		//USER HELP (Generate user commands)
+		if (strcmp(user_input,	"help") == 0){
+
+			Display_Help();
 	
-	for (i = 0; i < 95; i++){
+		}
+		//SCODE (Display specific ASCII code)
+		else if (strcmp(user_input, "scode") == 0){
 
-		printf("%c\t", c);
+			scanf("%d", &user_arg);
 
-		c += 19;
-		j++;
+			if (user_arg >= 32 && user_arg <= 126){
 
-		if (j == 5){
+				Display_ASCII_Code(user_arg);
 
-			z++;
-			c = 32 + z;
+			}
+			else{
 
-			j = 0;
+				printf("$ : WARRNING: ASCII CODE TABLE RANGES FROM 32 TO 126\n");
 
-			printf("\n");
+			}
+
+
+		}
+		//GENTABLE (Display default ASCII code table)
+		else if (strcmp(user_input, "gentable") == 0){
+
+			Display_ACII_Table(95);
+
+		}
+		//GENTABLE (Display first x ASCII codes)
+		else if (strcmp(user_input, "fcode") == 0){
+
+			scanf("%d", &user_arg);
+
+			if (user_arg >= 0 && user_arg <= 95)
+			{
+
+				Display_ACII_Table(user_arg);
+
+			}
+			else{
+
+				printf("$ : WARRNING: OUT OF BOUNDS.RANGE (0,95)\n");
+
+			}
+
 
 		}
 
 	}
-
-	printf("----------------------------------");
-	printf("\a"); //BELL SOUND KAPPA (may work)
 
 	//Pause
 	_getch();
