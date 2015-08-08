@@ -1,1 +1,2 @@
-ASCII CODES GEN.
+Program to generate ASCII codes.
+
