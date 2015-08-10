@@ -5,7 +5,8 @@ void Display_ACII_Table(int x){
 
 	printf("\nASCII CODE TABLE:\n----------------------------------\n");
 
-	int c = 32;
+	int c = 32; //1st ASCII code
+	
 	for (; i < x; i++){
 
 		printf("%c\t", c);
@@ -28,24 +29,21 @@ void Display_ACII_Table(int x){
 	printf("\n");
 	printf("----------------------------------\n");
 
-
 }
 
 //<SCODE FUNCTION (GENERATE SPECIFIC ASCII CODE)>
 void Display_ASCII_Code(int x){
 
 	if (x == 32){
-
 		printf("' '\n");
 	}
 	else{
-
 		printf("%c\n", x);
 	}
 
 }
 
-//<GENERATE HELP FOR CMD>
+//<GENERATE HELP LIST>
 void Display_Help(){
 
 	printf("gentable        -- Will generate deafult ASCII code table.\n");
