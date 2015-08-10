@@ -16,11 +16,11 @@ int main(){
 
 	for (i = 0; i < i + 1; i++){
 
-		printf("$ : ");
+		printf("~$ ");
 		
 		scanf("%s", user_input);
 
-		//USER HELP (Generate user commands)
+		//USER HELP (Generate list of user commands)
 		if (strcmp(user_input,	"help") == 0){
 
 			Display_Help();
@@ -37,20 +37,17 @@ int main(){
 
 			}
 			else{
-
-				printf("$ : WARRNING: ASCII CODE TABLE RANGES FROM 32 TO 126\n");
-
+				printf("~$ WARRNING: ASCII CODE TABLE RANGES FROM 32 TO 126\n");
 			}
 
-
 		}
-		//GENTABLE (Display default ASCII code table)
+		//GENTABLE (Display default ASCII codes table)
 		else if (strcmp(user_input, "gentable") == 0){
 
 			Display_ACII_Table(95);
 
 		}
-		//GENTABLE (Display first x ASCII codes)
+		//FCODE (Display first x ASCII codes)
 		else if (strcmp(user_input, "fcode") == 0){
 
 			scanf("%d", &user_arg);
@@ -62,9 +59,7 @@ int main(){
 
 			}
 			else{
-
-				printf("$ : WARRNING: OUT OF BOUNDS.RANGE (0,95)\n");
-
+				printf("~$ WARRNING: OUT OF BOUNDS.RANGE (0,95)\n");
 			}
 
 
